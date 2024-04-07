@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "2.2",
+  "description": "Install Nginx on Ubuntu",
+  "parameters": {},
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "installNginx",
+      "inputs": {
+        "runCommand": [
+          "sudo apt-get update",
+          "sudo apt-get install -y nginx",
+          "sudo systemctl enable nginx",
+          "sudo systemctl start nginx"
+        ]
+      }
+    }
+  ]
+}
